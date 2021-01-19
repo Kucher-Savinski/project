@@ -10,6 +10,7 @@ import { ProductPageComponent } from './admin/product-page/product-page.componen
 import { CartPageComponent } from './admin/cart-page/cart-page.component';
 import { RegistrationComponent } from './Common/registration/registration.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

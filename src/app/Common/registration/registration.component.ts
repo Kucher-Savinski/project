@@ -1,9 +1,17 @@
 import { Router} from '@angular/router';
+//import { AuthService } from './../../Common/shared/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators, Validator } from '@angular/forms';
 
+  /* const confirmPasswordValidator = (controlToCompare: AbstractControl) => 
+  (control: AbstractControl) => {
+    const controlValue = control.value;
+    const anotherValue = controlToCompare.value
+    if( controlValue!==anotherValue) return { confirmPassword: true } 
+    return null;
+}*/
 
-type NewType = FormGroup;
+
 
 @Component({
   selector: 'app-registration',
@@ -11,22 +19,26 @@ type NewType = FormGroup;
   styleUrls: ['./registration.component.scss'],
 })
 export class RegistrationComponent implements OnInit {
-myform: NewType;
+myform: FormGroup;
 submitted = false;
 
 
   constructor(
+    //public auth: AuthService,
     public router: Router,
   ) {
+    
+   }
+
+  ngOnInit() {
     this.myform = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)]),
+      conpassword: new FormControl(null, [Validators.required])
     });
-   }
-
-  ngOnInit() : void {
-
     }
+
+
 
   submit() {
     if ( this.myform.invalid){
@@ -41,9 +53,16 @@ submitted = false;
     }
 
     
-
+   /* this.auth.login(user).subscribe( res => {
+      this.form.reset;
+      this.router.navigate(['/admin','dashboard']);
+      this.submitted = false;
+      }, () => {
+        this.submitted = false;
+      } );*/
   }
   gonext = () => {
     this.router.navigate(['/admin', 'dashboard']);
   }
 }
+

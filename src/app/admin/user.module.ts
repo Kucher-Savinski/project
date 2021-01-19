@@ -7,9 +7,10 @@ import { NgModule } from '@angular/core';
 import { DashboardPageComponent } from './dashboard-page/dashboard-page.component';
 import { OrdersPageComponent } from './orders-page/orders-page.component';
 import {FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import { AddComponent } from './add/add.component';
 
 @NgModule({
-
+    
     imports: [
         CommonModule,
         FormsModule,
@@ -21,7 +22,8 @@ import {FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
                     {path: 'login', component: LoginPageComponent},
                     {path: 'dashboard', component: DashboardPageComponent},
                     {path: 'orders', component: OrdersPageComponent},
-                    {path: 'cart', component: CartPageComponent}
+                    {path: 'cart', component: CartPageComponent},
+                    {path: 'add', component: AddComponent}
                 ]
             }
         ])
@@ -31,7 +33,8 @@ import {FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
         AdminLayoutComponent,
         DashboardPageComponent,
         OrdersPageComponent,
-        LoginPageComponent
+        LoginPageComponent,
+        AddComponent
     ],
 
     exports: [RouterModule]

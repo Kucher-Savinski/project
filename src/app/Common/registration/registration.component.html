@@ -1,5 +1,5 @@
 <form [formGroup] ='myform' (ngSubmit)='submit()'>
-    <h2>Login on as User</h2>
+    <h2>Registration</h2>
 
     <div class='form-control'>
         <label for="email">E-mail</label>
@@ -22,8 +22,16 @@
         </div>
     </div>
 
+  <!--  <div class='form-control'>
+        <label for="conpassword">ConPassword</label>
+        <input type="conpassword" formControlName='conpassword' id="conpassword">
+        <div *ngIf="myform.get('conpassword').touched" class="validation">
+            <small *ngIf="">Passwords must be same</small>
+        </div>
+    </div> -->
+
     <button type="submit" class="btn btn-primary btn-block" [disabled]="myform.invalid || submitted" (click)='gonext()'>
-        Sign in
+        Sign up
     </button>
 
 </form>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'app-orders-page',
   templateUrl: './orders-page.component.html',
@@ -7,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrdersPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router) { }
 
+  gonext = () => {
+this.router.navigate(['/admin','add']);
+  }
   ngOnInit(): void {
   }
 
